@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="CDPBaseMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Main Window</string>
+  </property>
+  <property name="msgBoxBgSvg">
+   <string>:/themes/flat_light/backgrounds/bgMsgBox.svg</string>
+  </property>
+  <property name="msgBoxBtnSvg">
+   <string>:/themes/flat_light/buttons/buttonPlain.svg</string>
+  </property>
+  <property name="themeNight">
+   <string>flat_dark</string>
+  </property>
+  <property name="themeDay">
+   <string>flat_light</string>
+  </property>
+  <property name="numPadName" stdset="0">
+   <string>CDPBaseNumPad</string>
+  </property>
+  <property name="keyPadName" stdset="0">
+   <string>CDPBaseKeyPad</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="CDPBaseButtonMsg" name="cdpBaseButtonMsg">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Sine</string>
+        </property>
+        <property name="svgFile">
+         <string>:/themes/flat_light/buttons/buttonPlain.svg</string>
+        </property>
+        <property name="cdpProperty" stdset="0">
+         <string/>
+        </property>
+        <property name="cdpRouting" stdset="0">
+         <string>RaspberryPiApp.LEDController</string>
+        </property>
+        <property name="cdpTextCommand">
+         <string>TO_SINE</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="CDPBaseButtonMsg" name="cdpBaseButtonMsg_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Sequence</string>
+        </property>
+        <property name="svgFile">
+         <string>:/themes/flat_light/buttons/buttonPlain.svg</string>
+        </property>
+        <property name="cdpProperty" stdset="0">
+         <string/>
+        </property>
+        <property name="cdpRouting" stdset="0">
+         <string>RaspberryPiApp.LEDController</string>
+        </property>
+        <property name="cdpTextCommand">
+         <string>TO_SEQUENCE</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="CDPBaseButtonMsg" name="cdpBaseButtonMsg_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>OFF</string>
+        </property>
+        <property name="svgFile">
+         <string>:/themes/flat_light/buttons/buttonPlain.svg</string>
+        </property>
+        <property name="cdpProperty" stdset="0">
+         <string/>
+        </property>
+        <property name="cdpRouting" stdset="0">
+         <string>RaspberryPiApp.LEDController</string>
+        </property>
+        <property name="cdpTextCommand">
+         <string>TO_NULL</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="CDPBaseButtonMsg" name="cdpBaseButtonMsg_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Random</string>
+        </property>
+        <property name="svgFile">
+         <string>:/themes/flat_light/buttons/buttonPlain.svg</string>
+        </property>
+        <property name="cdpProperty" stdset="0">
+         <string/>
+        </property>
+        <property name="cdpRouting" stdset="0">
+         <string>RaspberryPiApp.LEDController</string>
+        </property>
+        <property name="cdpTextCommand">
+         <string>TO_RANDOM</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="CDPBaseLamp" name="cdpBaseLamp">
+        <property name="cdpStyleRouting" stdset="0">
+         <string>RaspberryPiApp.LEDController.L2.Value</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="CDPBaseLamp" name="cdpBaseLamp_2">
+        <property name="cdpStyleRouting" stdset="0">
+         <string>RaspberryPiApp.LEDController.L1.Value</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="CDPBaseLamp" name="cdpBaseLamp_3">
+        <property name="cdpStyleRouting" stdset="0">
+         <string>RaspberryPiApp.LEDController.L0.Value</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="CDPBaseLabel" name="cdpBaseLabel">
+        <property name="text">
+         <string>LED Visualization</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDPBaseButton</class>
+   <extends>QPushButton</extends>
+   <header>CDPBaseWidgets/CDPBaseButton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseButtonMsg</class>
+   <extends>CDPBaseButton</extends>
+   <header>CDPBaseWidgets/CDPBaseButtonMsg.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseLabel</class>
+   <extends>QLabel</extends>
+   <header>CDPBaseWidgets/CDPBaseLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBasePicture</class>
+   <extends>QWidget</extends>
+   <header>CDPBaseWidgets/CDPBasePicture.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBasePictureSequence</class>
+   <extends>CDPBasePicture</extends>
+   <header>CDPBaseWidgets/CDPBasePictureSequence.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseLamp</class>
+   <extends>CDPBasePictureSequence</extends>
+   <header>CDPBaseWidgets/CDPBaseLamp.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseMainWindow</class>
+   <extends>QMainWindow</extends>
+   <header>CDPBaseWidgets/CDPBaseMainWindow.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

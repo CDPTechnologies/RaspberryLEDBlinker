@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<Model Name="RaspberryLib.LEDController" Version="2.0">
+ <ModelTypeClass>C++</ModelTypeClass>
+ <BaseModel>CDPComponent</BaseModel>
+ <Priority>normal</Priority>
+ <fs>5</fs>
+ <Attributes>
+  <Attribute Name="Description" Value="Simple component"/>
+  <Attribute Description="Implementation model used." Required="1" SaveOnChange="0" Type="string" ReadOnly="1" Name="Model" Value="RaspberryLib.LEDController"/>
+ </Attributes>
+ <Signals>
+  <Signal Type="bool" Name="L0" Model="CDPSignal&lt;bool&gt;" Input="0"/>
+  <Signal Type="bool" Name="L1" Model="CDPSignal&lt;bool&gt;" Input="0"/>
+  <Signal Type="bool" Name="L2" Model="CDPSignal&lt;bool&gt;" Input="0"/>
+ </Signals>
+ <States>
+  <State Name="Sine"/>
+  <State Name="Sequence"/>
+  <State Name="Random"/>
+ </States>
+ <StateTransitions>
+  <StateTransition FromState="Null" Name="NullToRandom" ToState="Random"/>
+  <StateTransition FromState="Null" Name="NullToSequence" ToState="Sequence"/>
+  <StateTransition FromState="Null" Name="NullToSine" ToState="Sine"/>
+  <StateTransition FromState="Random" Name="RandomToNull" ToState="Null"/>
+  <StateTransition FromState="Random" Name="RandomToSequence" ToState="Sequence"/>
+  <StateTransition FromState="Random" Name="RandomToSine" ToState="Sine"/>
+  <StateTransition FromState="Sequence" Name="SequenceToNull" ToState="Null"/>
+  <StateTransition FromState="Sequence" Name="SequenceToRandom" ToState="Random"/>
+  <StateTransition FromState="Sequence" Name="SequenceToSine" ToState="Sine"/>
+  <StateTransition FromState="Sine" Name="SineToNull" ToState="Null"/>
+  <StateTransition FromState="Sine" Name="SineToRandom" ToState="Random"/>
+  <StateTransition FromState="Sine" Name="SineToSequence" ToState="Sequence"/>
+ </StateTransitions>
+ <Messages>
+  <Message Name="TO_SINE"/>
+  <Message Name="TO_SEQUENCE"/>
+  <Message Description="" Name="TO_RANDOM"/>
+  <Message Name="TO_NULL"/>
+ </Messages>
+</Model>

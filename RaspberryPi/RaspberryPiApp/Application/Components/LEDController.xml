@@ -1,0 +1,24 @@
+<Component Model='RaspberryLib.LEDController' Name='LEDController' src='Components/LEDController.xml'>
+  <fs>5</fs>
+
+  <Signals>
+    <Signal Description='Process run time each s.' DisplayLevel='10' Input='0' Model='CDPSignal&lt;double&gt;' Name='Process Timer' Type='double' Unit='s/s'></Signal>
+    <Signal Description='Process interval [s].' DisplayLevel='10' Input='0' Model='CDPSignal&lt;double&gt;' Name='Process Period' Type='double' Unit='s'></Signal>
+    <Signal Input='0' Model='CDPSignal&lt;bool&gt;' Name='L0' Type='bool'>
+      <Operator Description='The ScalingOperator scales from one range and type to another range and type.' Model='ScalingOperator&lt;int&gt;' Name='ScalingOperator' Type='int'>
+        <ScalingPoint InValue='0' Model='ScalingPoint&lt;int&gt;' Name='ScalingPoint' OutValue='0' Type='int'  InValueRouting=''  OutValueRouting=''></ScalingPoint>
+        <ScalingPoint InValue='1' Model='ScalingPoint&lt;int&gt;' Name='ScalingPoint1' OutValue='2' Type='int'  InValueRouting=''  OutValueRouting=''></ScalingPoint></Operator></Signal>
+    <Signal Input='0' Model='CDPSignal&lt;bool&gt;' Name='L1' Type='bool'>
+      <Operator Description='The ScalingOperator scales from one range and type to another range and type.' Model='ScalingOperator&lt;int&gt;' Name='ScalingOperator' Type='int'>
+        <ScalingPoint InValue='0' Model='ScalingPoint&lt;int&gt;' Name='ScalingPoint' OutValue='0' Type='int'  InValueRouting=''  OutValueRouting=''></ScalingPoint>
+        <ScalingPoint InValue='1' Model='ScalingPoint&lt;int&gt;' Name='ScalingPoint1' OutValue='5' Type='int'  InValueRouting=''  OutValueRouting=''></ScalingPoint></Operator></Signal>
+    <Signal Input='0' Model='CDPSignal&lt;bool&gt;' Name='L2' Type='bool'>
+      <Operator Description='The ScalingOperator scales from one range and type to another range and type.' Model='ScalingOperator&lt;int&gt;' Name='ScalingOperator' Type='int'>
+        <ScalingPoint InValue='0' Model='ScalingPoint&lt;int&gt;' Name='ScalingPoint' OutValue='0' Type='int'  InValueRouting=''  OutValueRouting=''></ScalingPoint>
+        <ScalingPoint InValue='1' Model='ScalingPoint&lt;int&gt;' Name='ScalingPoint1' OutValue='4' Type='int'  InValueRouting=''  OutValueRouting=''></ScalingPoint></Operator></Signal>
+  </Signals>
+
+  <Alarms>
+    <Alarm Description='A component was suspended!' DisplayLevel='10' Enabled='1' Level='Warning' Model='CDPAlarm' Name='Component Suspended' Text='Component was suspended!'></Alarm>
+  </Alarms>
+</Component>
